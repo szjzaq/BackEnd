@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.backend.main.dao.CountryDao">
+
+    <insert id="addCountry" parameterType="int">
+        insert into artwork_rank(countryName, year, maleCount, femaleCount, Total)
+        values (#{countryName},#{year},#{maleCount},#{femaleCount},#{Total})
+    </insert>
+
+
+    <select id="getCountries" resultType="com.example.backend.main.domain.entity.Country">
+        select *
+        from country
+    </select>
+
+</mapper>
