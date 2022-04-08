@@ -37,4 +37,22 @@ public class CountryController {
         return new ReturnStructure(code, message, map);
     }
 
+    @GetMapping("/getTopFiveCountries")
+    private ReturnStructure getTopFiveCountries() {
+        int code;
+        Map<String, Object> map = new HashMap<>();
+        String message;
+        List<Map<String,Object>> topFiveCountries = countryService.selectTopFiveCountries();
+        if (topFiveCountries != null) {
+            code = 200;
+            message = "success";
+            map.put("Year", topFiveCountries);
+        } else {
+            code = 404;
+            message = "error";
+        }
+        return new ReturnStructure(code, message, map);
+    }
+
+
 }

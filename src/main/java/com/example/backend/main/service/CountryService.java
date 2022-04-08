@@ -11,4 +11,6 @@ public interface CountryService {
 
     int addCountry(Country country);
 
+    List<Map<String,Object>> selectTopFiveCountries();
+
 }
